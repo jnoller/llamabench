@@ -3,6 +3,9 @@
 This is a major update to our llama.cpp package and build, and includes the addition of the 
 `llama.cpp-tools` and `gguf` packages to the feedstock.
 
+Feedstock: https://github.com/AnacondaRecipes/llama.cpp-feedstock
+Upstream: https://github.com/ggerganov/llama.cpp
+
 # High level changes from 0.0.3747
 
 - Fixed the windows build scripts to work with the new GGML style arguments, add in missing flags to windows cmake build.
