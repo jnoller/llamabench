@@ -321,15 +321,18 @@ As other tools and scripts are added to the repo, the current approach will allo
 
 ## TODO
 
-- Update to the latest upstream tag and build - more breaking changes came in after b3989.
-- Identify and root cause why the upstream make logic that injects the version number from the git repo is not matching the tag that conda-build is 
+- CHORE: Update to the latest upstream tag and build - more breaking changes came in after b3989.
+- BUG: Identify and root cause why the upstream make logic that injects the version number from the git repo is not matching the tag that conda-build is 
   using to check out the source.
   - For example, the build should be 3989 but for some reason the make logic is setting it to 3991.
-- Add in the v4 AVX512 builds for linux and windows (may restrict build hosts to only include AVX512 capable machines).
+- DOCS: Add formal CHANGELOG.md and collapse the existing release notes into it.
+- DOCS: Add /docs/ directory to the feedstock to document the packages, processes and thinking
+- DOCS: Update the README.md; note that this no longer reflects the conda-forge version(s)
+- FEATURE: Add in the v4 AVX512 builds for linux and windows (may restrict build hosts to only include AVX512 capable machines).
   - On AMD chips AVX512 performance is suppose to be way better than Intel / AVX512.
-- Add /server/bench and /server/html assets to the `llama.cpp-tools` package (but this would depend on llama.cpp)
+- FEATURE: Add /server/bench and /server/html assets to the `llama.cpp-tools` package (but this would depend on llama.cpp)
   - Where do html and other assets belong, especially if the server binary is in llama.cpp?
-- Investigate: Patch upstream pyproject.toml files to align them with the rest of the repository and add the missing scripts/tools.
+- INVESTIGATE: Patch upstream pyproject.toml files to align them with the rest of the repository and add the missing scripts/tools.
   - This would allow us to remove the `llama.cpp-tools` package from the feedstock and just execute the the install via `pip`
   - We would have to regenerate the patch for any new tool/script we wanted to add to `-tools|-scripts`
   - It would need to pull in several directories in the /examples directory.
